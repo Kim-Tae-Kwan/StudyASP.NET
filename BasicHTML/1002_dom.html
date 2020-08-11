@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>DOM example</title>
+        <script>
+            window.onload = function(){
+                // document.querySelectorAll("h1").style.backgroundColor="red";
+                // document.querySelector("h2").style.backgroundColor="blue";
+
+                // 01. getElementById
+                // var selector = document.getElementById("selector");
+                // selector.style.backgroundColor = "green";
+                // selector.style.color = "white";
+                // selector.innerHTML="<i>Javascript</i> Changed"
+
+                // 02. querySelector
+                // var header = document.querySelector("h1");
+                // header.style.backgroundColor = "red";
+                // header.style.color = "yellow";
+                // header.innerHTML = "한글로 보내요";
+
+                // 03. querySelectorAll
+                var headers = document.querySelectorAll("h1");
+                for (let index = 0; index < headers.length; index++) {
+                    var header = headers[index];
+                    header.style.backgroundColor="green";
+                    header.style.color="white";
+                    header.innerHTML = "FROM Javascript : "+index;
+                }
+                
+                
+            
+        </script>
+    </head>
+    <body>
+        <h1>Lorem ipsum quia dolor sit amet</h1>
+        <h2>Lorem ipsum quia dolor sit amet</h2>
+
+        <h1 id="selector">Test</h1>
+    </body>
+
+</html>

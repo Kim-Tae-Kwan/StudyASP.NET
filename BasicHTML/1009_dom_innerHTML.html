@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>DOM example</title>
+        <script>
+           window.onload = function(){
+            //    //변수선언
+                  //01. 코딩을 h1 생성
+            //    var output = "";
+            //    for (let index = 0; index < 10; index++) {
+            //        output += "<h1>header - "+index+"</h1>";
+            //    }
+
+            //    document.body.innerHTML = output;
+
+            //02. gradation div
+            var output="";
+            for (let index = 0; index < 256; index++) {
+                output+= "<div></div>";
+                
+            }
+            document.body.innerHTML=output;
+            
+            var divs = document.querySelectorAll("div")
+            for (let i = 0; i < divs.length; i++) {
+                var div = divs[i];
+
+                //스타일 적용
+                div.style.height = "5px";
+                div.style.backgroundColor = "rgb("+i+", "+i+","+i+")";
+                
+            }
+           }
+            
+        </script>
+    </head>
+    <body>
+        
+    </body>
+
+</html>
