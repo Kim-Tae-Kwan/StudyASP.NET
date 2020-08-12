@@ -261,6 +261,7 @@
     <Content Include="assets\vendor\wow\animate.css" />
     <Content Include="assets\vendor\wow\wow.min.js" />
     <Content Include="BootstrapSamples\Test01.html" />
+    <Content Include="BootstrapSamples\Test02.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -295,6 +296,7 @@
     <Content Include="assets\vendor\fontawesome\fonts\fontawesome-webfont.woff" />
     <Content Include="assets\vendor\fontawesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="assets\vendor\fontawesome\fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

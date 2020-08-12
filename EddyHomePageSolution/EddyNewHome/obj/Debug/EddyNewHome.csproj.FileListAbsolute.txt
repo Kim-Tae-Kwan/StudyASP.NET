@@ -83,3 +83,4 @@ C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\obj\Debu
 C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\obj\Debug\EddyNewHome.csproj.CopyComplete
 C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\obj\Debug\EddyNewHome.dll
 C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\obj\Debug\EddyNewHome.pdb
+C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\obj\Debug\EddyNewHome.csprojAssemblyReference.cache
