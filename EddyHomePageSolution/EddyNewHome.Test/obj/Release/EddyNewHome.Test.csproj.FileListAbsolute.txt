@@ -1,0 +1,2 @@
+C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome.Test\obj\Release\EddyNewHome.Test.csprojAssemblyReference.cache
+C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome.Test\obj\Release\EddyNewHome.Test.csproj.CoreCompileInputs.cache

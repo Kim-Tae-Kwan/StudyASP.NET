@@ -83,4 +83,9 @@ C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\obj\Debu
 C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\obj\Debug\EddyNewHome.csproj.CopyComplete
 C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\obj\Debug\EddyNewHome.dll
 C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\obj\Debug\EddyNewHome.pdb
+C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\bin\EntityFramework.dll
+C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\bin\EntityFramework.SqlServer.dll
+C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\bin\EntityFramework.xml
+C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\bin\EntityFramework.SqlServer.xml
+C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\bin\ko\EntityFramework.resources.dll
 C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\obj\Debug\EddyNewHome.csprojAssemblyReference.cache

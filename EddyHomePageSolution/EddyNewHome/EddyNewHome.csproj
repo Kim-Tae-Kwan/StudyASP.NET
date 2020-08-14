@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -120,10 +128,42 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BoardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
+    <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Commons.cs" />
+    <Compile Include="Models\ArticleComments.cs">
+      <DependentUpon>EddyNewHomeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ArticleFiles.cs">
+      <DependentUpon>EddyNewHomeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BoardArticles.cs">
+      <DependentUpon>EddyNewHomeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EddyNewHomeModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EddyNewHomeModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EddyNewHomeModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EddyNewHomeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EddyNewHomeModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EddyNewHomeModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Members.cs">
+      <DependentUpon>EddyNewHomeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -239,6 +279,12 @@
     <Content Include="assets\vendor\flaticons\license.txt" />
     <Content Include="assets\vendor\fontawesome\css\font-awesome.min.css" />
     <Content Include="assets\vendor\fontawesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\vendor\footable\._footable.all.min.js" />
+    <Content Include="assets\vendor\footable\._footable.core.css" />
+    <Content Include="assets\vendor\footable\fonts\._footable.svg" />
+    <Content Include="assets\vendor\footable\fonts\footable.svg" />
+    <Content Include="assets\vendor\footable\footable.all.min.js" />
+    <Content Include="assets\vendor\footable\footable.core.css" />
     <Content Include="assets\vendor\hover\css\demo-page.css" />
     <Content Include="assets\vendor\hover\css\hover-min.css" />
     <Content Include="assets\vendor\hover\css\hover.css" />
@@ -270,6 +316,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\EddyNewHomeModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EddyNewHomeModel.Context.cs</LastGenOutput>
+      <DependentUpon>EddyNewHomeModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\EddyNewHomeModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EddyNewHomeModel.edmx</DependentUpon>
+      <LastGenOutput>EddyNewHomeModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\custom\css\style.css.map" />
@@ -296,6 +352,20 @@
     <Content Include="assets\vendor\fontawesome\fonts\fontawesome-webfont.woff" />
     <Content Include="assets\vendor\fontawesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="assets\vendor\fontawesome\fonts\FontAwesome.otf" />
+    <EntityDeploy Include="Models\EddyNewHomeModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EddyNewHomeModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\EddyNewHomeModel.edmx.diagram">
+      <DependentUpon>EddyNewHomeModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="assets\vendor\footable\._fonts" />
+    <Content Include="assets\vendor\footable\fonts\._footable.eot" />
+    <Content Include="assets\vendor\footable\fonts\._footable.ttf" />
+    <Content Include="assets\vendor\footable\fonts\._footable.woff" />
+    <Content Include="assets\vendor\footable\fonts\footable.eot" />
+    <Content Include="assets\vendor\footable\fonts\footable.ttf" />
+    <Content Include="assets\vendor\footable\fonts\footable.woff" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -336,10 +406,16 @@
     <Content Include="Views\Shared\_EddyHomeLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Feedback.cshtml" />
+    <Content Include="Views\Member\Entry.cshtml" />
+    <Content Include="Views\Member\List.cshtml" />
+    <Content Include="Views\Member\Edit.cshtml" />
+    <Content Include="Views\Resume\Index.cshtml" />
+    <Content Include="Views\Portfolio\Index.cshtml" />
+    <Content Include="Views\Board\Create.cshtml" />
+    <Content Include="Views\Board\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -353,6 +429,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

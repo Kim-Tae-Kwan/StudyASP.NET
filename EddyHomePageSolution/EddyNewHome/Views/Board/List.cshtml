@@ -1,0 +1,109 @@
+﻿@model IEnumerable<EddyNewHome.Models.BoardArticles>
+
+@{
+    ViewBag.Title = "List";
+}
+
+@section scripts{
+    <script>
+        $(document).ready(function(){
+            $(".footable").footable();
+        })
+    </script>
+}
+<div id="feedback" class="inner-content">
+
+    <section id="page-title" class="inner-section">
+        <div class="container-fluid nopadding wow fadeInRight" data-wow-delay="0.4s" data-wow-offset="10">
+            <h2 class="font-accident-two-normal uppercase">Board List</h2>
+            <h5 class="font-accident-one-bold hovercolor uppercase">@Html.ActionLink("글쓰기", "Create")</h5>
+            @*<p class="small fontcolor-medium">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id metus purus. Ut vulputate, est vel tincidunt mattis, orci neque iaculis lectus, et interdum quam felis vel tortor. Fusce ultrices dui quis nunc dignissim faucibus. Ut ac odio quis nibh viverra fringilla ac id nisi. Suspendisse tincidunt augue quis ligula cursus, non efficitur ligula faucibus. Mauris id neque maximus, tincidunt metus et, sodales nulla.
+                </p>*@
+        </div>
+    </section>
+
+    <!-- List Block -->
+    <section class="inner-section feedback feedback-light">
+        <div class="container-fluid nopadding">
+            <div class="row">
+                <div class="col-md-12 e-centered wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">
+                    <div class="dividewhite2"></div>
+                    <div id="form-messages"></div>
+                    <!-- 실제 리스트 영역 시작-->
+                    <table class="footable table table-striped" data-page-size="10">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ArticleIDX)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ArticleType)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Title)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.IPAddress)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RegistDate)
+                                </th>
+
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            
+                            @foreach (var item in Model)
+                            {
+
+                                <tr>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.ArticleIDX)
+                                    </th>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ArticleType)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.IPAddress)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RegistDate)
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6" style="text-align:right">
+                                    <ul class="pagination pull-right"></ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <!-- 실제 리스트 영역 끝-->
+                </div>
+                <div class="col-md-12 divider-dynamic"></div>
+            </div>
+
+        </div>
+
+        <div class="dividewhite6"></div>
+
+    </section>
+    <!-- /List Block -->
+</div>
+
+

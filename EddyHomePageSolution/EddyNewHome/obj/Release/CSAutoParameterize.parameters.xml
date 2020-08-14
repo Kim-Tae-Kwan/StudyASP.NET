@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters />
+<parameters>
+  <parameter name="EddyNewHomeEntities-Web.config Connection String" description="EddyNewHomeEntities 데이터베이스에 액세스하기 위해 애플리케이션에 의해 web.config에 사용된 연결 문자열입니다." defaultValue="metadata=res://*/Models.EddyNewHomeModel.csdl|res://*/Models.EddyNewHomeModel.ssdl|res://*/Models.EddyNewHomeModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=localhost;initial catalog=EddyNewHome;persist security info=True;user id=sa;password=mssql_p@ssw0rd;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\PKNU\\Desktop\\IOT\\StudyASP\.NET\\EddyHomePageSolution\\EddyNewHome\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EddyNewHomeEntities']/@connectionString" />
+  </parameter>
+</parameters>

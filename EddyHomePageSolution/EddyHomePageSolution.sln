@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EddyHomePage", "EddyHomePag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EddyNewHome", "EddyNewHome\EddyNewHome.csproj", "{F6970108-5055-4D1D-A1A5-975FCEFF7661}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EddyNewHome.Test", "EddyNewHome.Test\EddyNewHome.Test.csproj", "{1AC694EA-E807-4D98-8345-49C2FBB6C70C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F6970108-5055-4D1D-A1A5-975FCEFF7661}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6970108-5055-4D1D-A1A5-975FCEFF7661}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6970108-5055-4D1D-A1A5-975FCEFF7661}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AC694EA-E807-4D98-8345-49C2FBB6C70C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AC694EA-E807-4D98-8345-49C2FBB6C70C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AC694EA-E807-4D98-8345-49C2FBB6C70C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AC694EA-E807-4D98-8345-49C2FBB6C70C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

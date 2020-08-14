@@ -31,6 +31,7 @@ namespace EddyNewHome
                 "~/assets/vendor/hover/css/hover-min.css",
                 "~/assets/vendor/wow/animate.css",
                 "~/assets/vendor/mfp/css/magnific-popup.css",
+                "~/assets/vendor/footable/footable.core.css", //200813 페이저 영역 추가
                 "~/assets/custom/css/style.css"));
 
             bundles.Add(new ScriptBundle("~/eddyhome/js").Include(
@@ -44,6 +45,7 @@ namespace EddyNewHome
                 "~/assets/vendor/anicounter/jquery.counterup.min.js",
                 "~/assets/vendor/wow/wow.min.js",
                 "~/assets/vendor/pjax/jquery.pjax.js",
+                "~/assets/vendor/footable/footable.all.min.js", //200813 신규추가
                 "~/assets/custom/js/custom.js"
                 ));
 

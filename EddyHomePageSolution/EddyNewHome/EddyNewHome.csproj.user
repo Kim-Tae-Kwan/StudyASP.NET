@@ -21,6 +21,7 @@
     <WebStackScaffolding_ViewDialogWidth>600</WebStackScaffolding_ViewDialogWidth>
     <ProjectView>ProjectFiles</ProjectView>
     <NameOfLastUsedPublishProfile>IISProfile</NameOfLastUsedPublishProfile>
+    <WebStackScaffolding_DbContextTypeFullName>EddyNewHome.Models.EddyNewHomeEntities</WebStackScaffolding_DbContextTypeFullName>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
