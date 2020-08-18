@@ -38,6 +38,7 @@ namespace EddyNewHome.Controllers
             return View(member);
         }
 
+        [HttpGet]
         public ActionResult List()
         {
             IEnumerable<Members> list = db.Members.ToList();

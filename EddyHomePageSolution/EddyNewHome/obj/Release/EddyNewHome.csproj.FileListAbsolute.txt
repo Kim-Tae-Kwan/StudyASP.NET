@@ -88,3 +88,4 @@ C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\bin\Enti
 C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\bin\EntityFramework.xml
 C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\bin\EntityFramework.SqlServer.xml
 C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\bin\ko\EntityFramework.resources.dll
+C:\Users\PKNU\Desktop\IOT\StudyASP.NET\EddyHomePageSolution\EddyNewHome\obj\Release\EddyNewHome.csprojAssemblyReference.cache

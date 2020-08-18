@@ -1,0 +1,97 @@
+﻿@using EddyNewHome.Models;
+
+@model EddyNewHome.Models.Members
+
+@{
+    ViewBag.Title = "Admin MemberEdit";
+}
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            var result = '@ViewBag.Result';
+            if (result == "OK") {
+                alert("정상적으로 저장되었습니다.");
+            }
+            if (result == "FAIL") {
+                alert("저장에 실패했습니다.");
+            }
+        });
+
+        //function fnDeleteConfirm() {
+        //    if (confirm("삭제하시겠습니까?") == true) {
+        //        location.href = "/Member/Delete?memberid=" + $("#MemberID").val();
+        //    } else {
+        //        return false;
+        //    }
+        //}
+
+
+
+
+        function fnSaveCheck() {
+            if ($("#MemberID").val() == "") {
+                alert("아이디를 입력하세요");
+                $("#MemberID").focus();
+                return false;
+            }
+            if ($("#MemberName").val() == "") {
+                alert("이름을 입력하세요");
+                $("#MemberName").focus();
+                return false;
+            }
+            if ($("#MemberPWD").val() == "") {
+                alert("암호를 입력하세요");
+                $("#MemberPWD").focus();
+                return false;
+            }
+            return true;
+
+        }
+    </script>
+}
+
+<section class="wrapper">
+    <h3><i class="fa fa-angle-right"></i>Member Edit</h3>
+    <!-- BASIC FORM ELELEMNTS -->
+    <div class="row mt">
+        <div class="col-lg-10 col-md-10 col-sm-10">
+            <h4 class="title">Edit</h4>
+            <div id="message"></div>
+            <form class="contact-form php-mail-form" role="form" action="@Url.Action("MemberEdit","Admin")" method="POST">
+
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.MemberID, new { @class = "form-control", placeHolder = "아이디를 입력하세요.", @readonly = "ture" })
+                    <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.MemberName, new { @class = "form-control", placeHolder = "이름을 입력하세요." })
+                    <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                    @Html.PasswordFor(m => m.MemberPWD, new { @class = "form-control", placeHolder = "암호를 입력하세요." })
+                    <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeHolder = "메일을 입력하세요." })
+                    <div class="validate"></div>
+                </div>
+
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.Telephone, new { @class = "form-control", placeHolder = "전화번호를 입력하세요." })
+                    <div class="validate"></div>
+                </div>
+
+                <div class="loading"></div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                <div class="form-send">
+                    <button type="submit" class="btn btn-large btn-primary" onclick="return fnSaveCheck();">Save</button>
+                    <a href="/Admin/Members" class="btn btn-large btn-primary">List</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>

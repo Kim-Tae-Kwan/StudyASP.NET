@@ -48,6 +48,7 @@
     <EntitySetMapping Name="Members">
       <EntityTypeMapping TypeName="EddyNewHomeModel.Members">
         <MappingFragment StoreEntitySet="Members">
+          <ScalarProperty Name="Levels" ColumnName="Levels" />
           <ScalarProperty Name="MemberID" ColumnName="MemberID" />
           <ScalarProperty Name="MemberPWD" ColumnName="MemberPWD" />
           <ScalarProperty Name="MemberName" ColumnName="MemberName" />

@@ -47,11 +47,12 @@
       <PropertyRef Name="MemberID" />
     </Key>
     <Property Name="MemberID" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="MemberPWD" Type="varchar" MaxLength="20" />
-    <Property Name="MemberName" Type="nvarchar" MaxLength="20" />
+    <Property Name="MemberPWD" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MemberName" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="50" />
     <Property Name="Telephone" Type="varchar" MaxLength="20" />
     <Property Name="EntryDate" Type="datetime" />
+    <Property Name="Levels" Type="char" MaxLength="1" />
   </EntityType>
   <Association Name="FK_ArticleComments_BoardArticles">
     <End Role="BoardArticles" Type="Self.BoardArticles" Multiplicity="1" />

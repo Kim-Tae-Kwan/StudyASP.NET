@@ -27,6 +27,7 @@ namespace EddyNewHome.Models
         public string Email { get; set; }
         public string Telephone { get; set; }
         public Nullable<System.DateTime> EntryDate { get; set; }
+        public string Levels { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ArticleComments> ArticleComments { get; set; }

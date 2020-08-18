@@ -1,0 +1,89 @@
+﻿@model IEnumerable<EddyNewHome.Models.Members>
+
+@{
+    ViewBag.Title = "Member List";
+}
+
+@section scripts{
+    <script>
+        $(document).ready(function(){
+            $(".footable").footable();
+        })
+    </script>
+}
+
+<section class="wrapper">
+    <h3><i class="fa fa-angle-right"></i>Member List</h3>
+    <div class="row mt">
+        <div class="col-lg-12">
+            <div class="content-panel">
+                <h4><i class="fa fa-angle-right"></i>List</h4>
+                <section id="unseen">
+                    <table class="footable table table-bordered table-striped table-condensed" data-page-size="10">
+                        <thead>
+                            <tr>
+                                <th data-sort-ignore="true">Number</th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MemberID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MemberName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Telephone)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EntryDate)
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int idx = 1;
+                            }
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th>@idx.ToString()</th>
+                                    <td>
+                                        @*@Html.DisplayFor(modelItem => item.MemberID)*@
+                                        <a href="/Admin/MemberEdit?memberid=@item.MemberID">@item.MemberID</a>
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MemberName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Telephone)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EntryDate)
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                idx++;
+
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6" style="text-align:right">
+                                    <ul class="pagination pull-right"></ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </section>
+            </div>
+            <!-- /content-panel -->
+        </div>
+        <!-- /col-lg-4 -->
+    </div>
+</section>

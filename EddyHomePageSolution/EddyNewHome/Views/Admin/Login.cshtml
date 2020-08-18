@@ -1,0 +1,92 @@
+﻿@model EddyNewHome.Models.Members
+
+@{
+    ViewBag.Title = "Admin Login";
+}
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            var result = '@ViewBag.Result';
+            if (result == "OK") {
+                alert("되었습니다.");
+            }
+            if (result == "FAIL") {
+                alert("로그인에 실패했습니다.");
+            }
+        });
+
+        function fnLoginCheck() {
+            if ($("#MemberID").val() == "") {
+                alert("아이디를 입력하세요");
+                $("#MemberID").focus();
+                return false;
+            }
+            if ($("#MemberPWD").val() == "") {
+                alert("암호를 입력하세요");
+                $("#MemberPWD").focus();
+                return false;
+            }
+            //if ($("#Levels").val() != '1') {
+            //    alert("관리자 권한이 없습니다.");
+            //    $("#MemberID").focus();
+            //    return false;
+            //}
+            return true;
+
+        }
+    </script>
+    }
+    <div id="feedback" class="inner-content">
+
+        <section id="page-title" class="inner-section">
+            <div class="container-fluid nopadding wow fadeInRight" data-wow-delay="0.4s" data-wow-offset="10">
+                <h2 class="font-accident-two-normal uppercase">Admin Login</h2>
+                <h5 class="font-accident-one-bold hovercolor uppercase">Hard-working person on the way to the success...</h5>
+                <p class="small fontcolor-medium">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id metus purus. Ut vulputate, est vel tincidunt mattis, orci neque iaculis lectus, et interdum quam felis vel tortor. Fusce ultrices dui quis nunc dignissim faucibus. Ut ac odio quis nibh viverra fringilla ac id nisi. Suspendisse tincidunt augue quis ligula cursus, non efficitur ligula faucibus. Mauris id neque maximus, tincidunt metus et, sodales nulla.
+                </p>
+            </div>
+        </section>
+
+        <!-- Login Block -->
+        <section class="inner-section feedback feedback-light">
+
+            <div class="container-fluid nopadding">
+
+                <div class="row">
+
+                    <div class="col-md-2">&nbsp;</div>
+                    <div class="col-md-8 e-centered wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">
+                        <div class="dividewhite2"></div>
+                        <div id="form-messages"></div>
+
+                        <form method="post" action="@Url.Action("Login","Admin")" class="wpcf7-form">
+
+                            <div class="field">
+                                @Html.TextBoxFor(m => m.MemberID, new { placeHolder = "아이디을 입력하세요." })
+                            </div>
+
+                            <div class="field">
+                                @Html.PasswordFor(m => m.MemberPWD, new { placeHolder = "암호를 입력하세요." })
+                            </div>
+
+                            <div class="dividewhite2"></div>
+
+                            <div class="field text-center">
+                                <button id="btnLogin" type="submit" class="btn btn-lg btn-lgr-str" onclick="return fnLoginCheck();">Login</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="col-md-2">&nbsp;</div>
+                    <div class="col-md-12 divider-dynamic"></div>
+                </div>
+
+            </div>
+
+            <div class="dividewhite6"></div>
+
+        </section>
+        <!-- /Feedback Block -->
+    </div>

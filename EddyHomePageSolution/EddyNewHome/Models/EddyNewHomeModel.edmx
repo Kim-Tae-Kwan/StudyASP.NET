@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EddyNewHomeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EddyNewHomeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ArticleComments">
           <Key>
             <PropertyRef Name="MemberID" />
@@ -52,11 +52,12 @@
             <PropertyRef Name="MemberID" />
           </Key>
           <Property Name="MemberID" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="MemberPWD" Type="varchar" MaxLength="20" />
-          <Property Name="MemberName" Type="nvarchar" MaxLength="20" />
+          <Property Name="MemberPWD" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MemberName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="50" />
           <Property Name="Telephone" Type="varchar" MaxLength="20" />
           <Property Name="EntryDate" Type="datetime" />
+          <Property Name="Levels" Type="char" MaxLength="1" />
         </EntityType>
         <Association Name="FK_ArticleComments_BoardArticles">
           <End Role="BoardArticles" Type="Self.BoardArticles" Multiplicity="1" />
@@ -128,8 +129,7 @@
             <End Role="BoardArticles" EntitySet="BoardArticles" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EddyNewHomeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -186,13 +186,14 @@
             <PropertyRef Name="MemberID" />
           </Key>
           <Property Name="MemberID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MemberPWD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="MemberName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MemberPWD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MemberName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="EntryDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="ArticleComments" Relationship="Self.FK_ArticleComments_Members" FromRole="Members" ToRole="ArticleComments" />
           <NavigationProperty Name="BoardArticles" Relationship="Self.FK_BoardArticles_Members" FromRole="Members" ToRole="BoardArticles" />
+          <Property Name="Levels" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
         <Association Name="FK_ArticleComments_BoardArticles">
           <End Role="BoardArticles" Type="Self.BoardArticles" Multiplicity="1" />
@@ -317,6 +318,7 @@
           <EntitySetMapping Name="Members">
             <EntityTypeMapping TypeName="EddyNewHomeModel.Members">
               <MappingFragment StoreEntitySet="Members">
+                <ScalarProperty Name="Levels" ColumnName="Levels" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
                 <ScalarProperty Name="MemberPWD" ColumnName="MemberPWD" />
                 <ScalarProperty Name="MemberName" ColumnName="MemberName" />
